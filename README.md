@@ -6,6 +6,10 @@ just wanted to make a racing game on python so yeah
 * scene manager
 * raycaster
 
+# controls
+WASD - move
+Space - handbrake
+
 # building
 1. required: python >=3.10
 2. install python dependencies: ```pip install pygame pyinstaller```
