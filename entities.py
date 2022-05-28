@@ -52,7 +52,6 @@ class PlayerCar:
     def update(self):
         keys = pygame.key.get_pressed()
 
-        print(self.vel)
         self.move()
         if keys[pygame.K_w or pygame.K_UP]:
             self.backwards = 0
@@ -68,7 +67,8 @@ class PlayerCar:
             self.rotate(right=True)
 
         if (self.backwards == 0):
-            self.vel = max(self.vel - self.dec_vel, 0)
+            if (self.vel > 0):
+                self.vel = max(self.vel - self.dec_vel, 0)
         else:
             if (self.vel < 0):
                 self.vel = min(self.vel + self.dec_vel, 0)
