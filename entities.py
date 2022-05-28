@@ -36,17 +36,14 @@ class PlayerCar:
         if (self.backwards == 0):
             self.vel = max(self.vel - self.accel_vel, 0)
         else:
-            self.vel = min(self.vel - self.accel_vel, 0)
+            self.vel = min(self.vel + self.accel_vel, 0)
 
 
     def rotate(self, left=False, right=True):
-        try:
-            if left:
-                self.angle -= self.rotate_vel * (self.max_vel / self.vel)
-            elif right:
-                self.angle += self.rotate_vel * (self.max_vel / self.vel)
-        except ZeroDivisionError:
-            return None
+        if left:
+            self.angle -= self.rotate_vel * ((self.vel * 1.5) / self.max_vel)
+        elif right:
+            self.angle += self.rotate_vel * ((self.vel * 1.5) / self.max_vel)
 
 
     def update(self):

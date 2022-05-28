@@ -19,7 +19,10 @@ while running:
     player.update()
 
     sc.fill((0, 0, 0))
+    
     pygame.draw.circle(sc, RED, (player.x, player.y), 2, 0)
+    pygame.draw.line(sc, GREEN, (player.x, player.y), (player.x + WIDTH * math.cos(math.radians(player.angle)),
+                                                       player.y + WIDTH * math.sin(math.radians(player.angle))))
 
     pygame.display.update()
     clock.tick(FPS)
