@@ -4,6 +4,7 @@ just wanted to make a racing game on python so yeah
 # plans
 * car physics with gearbox
 * scene manager
+* multiplayer
 * raycaster
 
 # controls
