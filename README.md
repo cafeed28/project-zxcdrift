@@ -1,5 +1,5 @@
 # some car game
-just wanted to make a racing game on python so yeah
+just wanted to make a oldschool 3d-like racing game on python so yeah
 
 # plans
 * car physics with gearbox
