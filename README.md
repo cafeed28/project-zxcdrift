@@ -2,9 +2,9 @@
 just wanted to make a oldschool 3d-like racing game on python so yeah
 
 # plans
-* car physics with gearbox
-* scene manager
+* **~~car physics~~** ~~with gearbox~~ fuck gearbox
 * multiplayer
+* scene manager
 * raycaster
 
 # controls
