@@ -1,8 +1,10 @@
-# some car game
-just wanted to make a oldschool 3d-like racing game on python so yeah
+# project zxcdrift
+a game with some old school graphics
 
 # plans
-* car physics with gearbox
+* ~~car physics~~
+* drift physics
+* some tuning
 * scene manager
 * multiplayer
 * raycaster
