@@ -74,9 +74,9 @@ class PlayerCar:
 
         if not keys[pygame.K_d or pygame.K_RIGHT] or not keys[pygame.K_a or pygame.K_LEFT]:
             if (self.lastTurn == 0):
-                self.angle -= (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toLeft / 4)
+                self.angle -= (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toLeft / 2)
             if (self.lastTurn == 1):
-                self.angle += (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toRight / 4)
+                self.angle += (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toRight / 2)
 
         if (self.backwards == 0):
             if (self.vel > 0):
