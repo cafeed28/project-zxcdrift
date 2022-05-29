@@ -7,7 +7,7 @@ window.set_caption("moki")
 sc = window.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
-player = PlayerCar(20, 20, 3.5, 4, 0.025, 0.1, 4)
+player = PlayerCar(20, 20, 3.5, 4, 0.025, 0.1, 0.8)
 
 running = True
 while running:

@@ -1,9 +1,10 @@
 import math
 from tkinter import N
+from xml.etree.ElementTree import tostring
 import pygame
 
 class PlayerCar:
-    def __init__(self, x, y, max_vel, rotate_vel, dec_vel, accel_vel, gearbox):
+    def __init__(self, x, y, max_vel, rotate_vel, dec_vel, accel_vel, drift_factor):
         self.x, self.y = x, y
 
         self.max_vel = max_vel
@@ -16,10 +17,11 @@ class PlayerCar:
         self.accel = 0
         self.dec = 0
 
-        self.backwards = 0
+        self.lastTurn = 0
+        self.toLeft = 0
+        self.toRight = 0
 
-        self.gearbox = gearbox
-        self.gearbox_cur = 0
+        self.backwards = 0
 
 
     def steer(self):
@@ -41,9 +43,11 @@ class PlayerCar:
 
     def rotate(self, left=False, right=True):
         if left:
-            self.angle -= self.rotate_vel * ((self.vel * 1.5) / self.max_vel)
+            self.lastTurn = 0
+            self.angle -= (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * self.toLeft
         elif right:
-            self.angle += self.rotate_vel * ((self.vel * 1.5) / self.max_vel)
+            self.lastTurn = 1
+            self.angle += (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * self.toRight
 
 
     def update(self):
@@ -59,9 +63,20 @@ class PlayerCar:
         if keys[pygame.K_SPACE]:
             self.rbrake()
         if keys[pygame.K_a or pygame.K_LEFT]:
+            self.toLeft = min(self.toLeft + 0.05, 1)
             self.rotate(left=True)
         if keys[pygame.K_d or pygame.K_RIGHT]:
+            self.toRight = min(self.toRight + 0.05, 1)
             self.rotate(right=True)
+
+        self.toLeft = max(self.toLeft - 0.025, 0)
+        self.toRight = max(self.toRight - 0.025, 0)
+
+        if not keys[pygame.K_d or pygame.K_RIGHT] or not keys[pygame.K_a or pygame.K_LEFT]:
+            if (self.lastTurn == 0):
+                self.angle -= (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toLeft / 4)
+            if (self.lastTurn == 1):
+                self.angle += (self.rotate_vel * ((self.vel * 1.5) / self.max_vel)) * (self.toRight / 4)
 
         if (self.backwards == 0):
             if (self.vel > 0):
