@@ -1,11 +1,11 @@
 import math
 from tkinter import N
-from turtle import backward
 import pygame
 
 class PlayerCar:
     def __init__(self, x, y, max_vel, rotate_vel, dec_vel, accel_vel, gearbox):
         self.x, self.y = x, y
+
         self.max_vel = max_vel
         self.rotate_vel = rotate_vel
         self.vel = 0
