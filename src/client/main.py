@@ -1,5 +1,5 @@
-import sys
 from pygame.locals import *
+from utils import resource_path
 from scenemanager import SceneManager
 from entities import *
 from config import *

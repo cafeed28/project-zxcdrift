@@ -3,6 +3,7 @@ from time import *
 from tkinter import W
 from pygame.locals import *
 from os import dup
+from utils import resource_path
 from entities import *
 from config import *
 import math
@@ -13,13 +14,13 @@ class SceneManager:
         self.sc = sc
         self.sceneChange = True
 
-        self.scene = 0
+        self.scene = 4
         self.level = 1
 
-        self.logo_font = pygame.font.Font('assets/OpenSans-Bold.ttf', 24)
-        self.b_font = pygame.font.Font('assets/OpenSans-Semibold.ttf', 12)
-        self.l_font = pygame.font.Font('assets/OpenSans-Regular.ttf', 14)
-        self.font = pygame.font.Font('assets/OpenSans-Regular.ttf', 12)
+        self.logo_font = pygame.font.Font(resource_path('assets/OpenSans-Bold.ttf'), 24)
+        self.b_font = pygame.font.Font(resource_path('assets/OpenSans-Semibold.ttf'), 12)
+        self.l_font = pygame.font.Font(resource_path('assets/OpenSans-Regular.ttf'), 14)
+        self.font = pygame.font.Font(resource_path('assets/OpenSans-Regular.ttf'), 12)
     
     def renderScenes(self):
         match self.scene:

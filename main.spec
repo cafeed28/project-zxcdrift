@@ -8,7 +8,7 @@ a = Analysis(
     ['src\\client\\main.py'],
     pathex=[],
     binaries=[],
-    datas=[('.\\assets\\OpenSans-Bold.ttf', 'assets\\OpenSans-Bold.ttf'), ('.\\assets\\OpenSans-Regular.ttf', 'assets\\OpenSans-Regular.ttf'), ('.\\assets\\OpenSans-Semibold.ttf', 'assets\\OpenSans-Semibold.ttf')],
+    datas=[],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -19,6 +19,8 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
+a.datas += Tree('./assets', prefix='assets')
+
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
@@ -36,7 +38,7 @@ exe = EXE(
     upx_exclude=[],
     runtime_tmpdir=None,
     console=False,
-    disable_windowed_traceback=False,
+    disable_windowed_traceback=True,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
