@@ -3,10 +3,10 @@ a game with some old school graphics
 
 # plans
 * ~~car physics~~
+* ~~scene manager~~
 * drift physics
 * some tuning
 * multiplayer
-* scene manager
 * raycaster
 
 # controls
