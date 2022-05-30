@@ -5,7 +5,6 @@ a game with some old school graphics
 * ~~car physics~~
 * drift physics
 * some tuning
-* scene manager
 * multiplayer
 * scene manager
 * raycaster
