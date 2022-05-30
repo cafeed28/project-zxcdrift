@@ -1,3 +1,4 @@
+import sys
 from pygame.locals import *
 from scenemanager import SceneManager
 from entities import *
@@ -11,4 +12,9 @@ window.set_caption("moki")
 sc = window.set_mode((WIDTH, HEIGHT), SCALED | DOUBLEBUF | RESIZABLE)
 
 scenemanager = SceneManager(sc)
-scenemanager.renderScenes()
+
+try:
+    scenemanager.renderScenes()
+except BaseException as e:
+    if (type(e) != SystemExit):
+        scenemanager.error(e)
