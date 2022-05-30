@@ -12,7 +12,7 @@ class SceneManager:
     def __init__(self, sc):
         self.sc = sc
         self.sceneChange = True
-        
+
         self.scene = 0
         self.level = 1
 
@@ -89,7 +89,7 @@ class SceneManager:
 
     def singleplayerGame(self):
         self.scene = 1
-        player = PlayerCar(WIDTH/2, HEIGHT/2, 3.5, 4, 0.025, 0.1)
+        player = PlayerCar(WIDTH/2, HEIGHT/2, 3.5, 3, 0.015, 0.1)
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:

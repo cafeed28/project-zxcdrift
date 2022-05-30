@@ -8,7 +8,7 @@ a = Analysis(
     ['src\\client\\main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('.\\assets\\OpenSans-Bold.ttf', 'assets\\OpenSans-Bold.ttf'), ('.\\assets\\OpenSans-Regular.ttf', 'assets\\OpenSans-Regular.ttf'), ('.\\assets\\OpenSans-Semibold.ttf', 'assets\\OpenSans-Semibold.ttf')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -19,11 +19,6 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
-
-a.datas += [('assets/OpenSans-Bold.ttf','assets/OpenSans-Bold.ttf', "DATA")]
-a.datas += [('assets/OpenSans-Regular.ttf','assets/OpenSans-Regular.ttf', "DATA")]
-a.datas += [('assets/OpenSans-Semibold.ttf','assets/OpenSans-Semibold.ttf', "DATA")]
-
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
